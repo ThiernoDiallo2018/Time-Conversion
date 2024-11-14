@@ -9,13 +9,21 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var value: Double = 0.0
-    @State private var timeChosen = "Seconds"
+    @State private var timeChosen = UnitDuration.seconds
     
-    @State private var timeConverted = "Seconds"
+    @State private var timeConverted = UnitDuration.seconds
     
     @FocusState private var valueIsFocused: Bool
     
-    let timeConversions = ["Seconds", "Minutes", "Hours", "Days"]
+    let units: [UnitDuration] = [UnitDuration.hours, UnitDuration.seconds, UnitDuration.minutes]
+    
+    /*
+     
+     
+     Able to access many different apis using UnitDuration, UnitLength, UnitMass, UnitTemperature...
+     
+     
+     */
     
     var result: String {
         let inputfromSeconds: Double
